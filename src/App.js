@@ -1,10 +1,15 @@
 import "./App.css";
 import PictureCrossGrid from "./components/PictureCrossGrid";
-import { generateCrossMatrix, generateMatrix, rotateMatrix } from "./utils";
+import {
+  calculateHints,
+  generateCrossMatrix,
+  generateMatrixWithValues,
+} from "./utils";
 
 function App() {
-  const top = rotateMatrix(generateMatrix(12, 4));
-  const left = generateMatrix(12, 4);
+  const randomMatrix = generateMatrixWithValues(12, 12);
+  const { top, left } = calculateHints(randomMatrix);
+
   const matrix = generateCrossMatrix(12, 12);
   return (
     <div className='App'>
@@ -14,26 +19,16 @@ function App() {
             <tr>
               <td colSpan='4'></td>
               <td colSpan='12'>
-                <PictureCrossGrid
-                  rows={4}
-                  columns={12}
-                  values={top}
-                  readonly={true}
-                />
+                <PictureCrossGrid values={top} readonly={true} />
               </td>
             </tr>
             <tr />
             <tr>
               <td colSpan='4'>
-                <PictureCrossGrid
-                  rows={12}
-                  columns={4}
-                  values={left}
-                  readonly={true}
-                />
+                <PictureCrossGrid values={left} readonly={true} />
               </td>
               <td>
-                <PictureCrossGrid rows={12} columns={12} values={matrix} />{" "}
+                <PictureCrossGrid values={matrix} />{" "}
               </td>
             </tr>
           </tbody>

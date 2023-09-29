@@ -3,14 +3,14 @@ import "./PictureCrossGrid.css";
 import Cell from "./Cell";
 
 const PictureCrossGrid = (props) => {
-  const { rows, columns, values } = props;
+  const { values } = props;
   // Function to render the grid cells
   const renderGridCells = () => {
     const cells = [];
 
-    for (let row = 0; row < rows; row++) {
+    for (let row = 0; row < values.length; row++) {
       const rowCells = [];
-      for (let col = 0; col < columns; col++) {
+      for (let col = 0; col < values[row].length; col++) {
         const cellContent = "X";
         rowCells.push(
           <Cell content={values[row][col] ?? cellContent} key={col} />
