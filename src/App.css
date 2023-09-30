@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+.readonly {
+  background-color: #ffffff;
+  color: white;
+}
+.grid-container {
+  background: linear-gradient(
+    to right,
+    rgb(199, 199, 198) 33.5%,
+    rgb(255, 255, 255) 33% 67%,
+    rgb(199, 199, 198) 66% 100%
+  );
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

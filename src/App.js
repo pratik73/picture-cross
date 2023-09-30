@@ -18,16 +18,16 @@ function App() {
           <tbody>
             <tr>
               <td colSpan='4'></td>
-              <td colSpan='12'>
+              <td colSpan='12' className='readonly'>
                 <PictureCrossGrid values={top} readonly={true} />
               </td>
             </tr>
             <tr />
             <tr>
-              <td colSpan='4'>
+              <td colSpan='4' className='readonly'>
                 <PictureCrossGrid values={left} readonly={true} />
               </td>
-              <td>
+              <td className='grid-container'>
                 <PictureCrossGrid values={matrix} />{" "}
               </td>
             </tr>

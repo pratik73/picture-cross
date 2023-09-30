@@ -47,7 +47,8 @@ const generateMatrixWithValues = (rows, cols) => {
   for (let i = 0; i < rows; i++) {
     matrix.push([]);
     for (let j = 0; j < cols; j++) {
-      Math.random() > 0.5 ? matrix[i].push("-") : matrix[i].push("X");
+      // the lower the value, the more likely it is to be a "-", which means it is easier to solve
+      Math.random() > 0.3 ? matrix[i].push("-") : matrix[i].push("X");
     }
   }
   return matrix;
